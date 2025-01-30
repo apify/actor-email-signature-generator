@@ -1,0 +1,92 @@
+{
+    "title": "Email signature generator actor input schema",
+    "description": "Enter your details for the Apify email signature. Only enter the values that you want to have in your signature.",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "fullName": {
+            "title": "Full Name",
+            "type": "string",
+            "description": "The full name displayed in the signature.",
+            "editor": "textfield"
+        },
+        "position": {
+            "title": "Position",
+            "type": "string",
+            "description": "Your position in Apify.",
+            "editor": "textfield"
+        },
+        "phoneNumber": {
+            "title": "Phone Number",
+            "type": "string",
+            "description": "Your phone number.",
+            "editor": "textfield"
+        },
+        "twitterUrl": {
+            "title": "Twitter URL",
+            "type": "string",
+            "description": "The URL of your Twitter.",
+            "editor": "textfield"
+        },
+        "linkedInUrl": {
+            "title": "LinkedIn URL",
+            "type": "string",
+            "description": "The URL of your LinkedIn.",
+            "editor": "textfield"
+        },
+        "githubUrl": {
+            "title": "GitHub URL",
+            "type": "string",
+            "description": "The URL of your GitHub.",
+            "editor": "textfield"
+        },
+        "hubspotUrl": {
+            "title": "Hubspot URL",
+            "type": "string",
+            "description": "The URL for Hubspot meetings.",
+            "editor": "textfield"
+        },
+        "otherUrls": {
+            "title": "Other URLs",
+            "type": "array",
+            "description": "Other URLs. The first value is the label (e.g. \"Facebook\"), the second one is the URL (e.g. \"https://facebook.com\")",
+            "editor": "keyValue",
+            "uniqueItems": false,
+            "placeholderKey": "Displayed label (e.g. \"Facebook\")",
+            "placeholderValue": "URL (e.g. \"https://facebook.com\")"
+        },
+        "apifyUrl": {
+            "title": "Apify Profile URL",
+            "type": "string",
+            "description": "The URL of your Apify profile.",
+            "editor": "textfield"
+        },
+        "apifyUrlLabel": {
+            "title": "Apify Profile URL Label",
+            "type": "string",
+            "description": "Optional label for your Apify profile URL. The default is \"Apify Profile\"",
+            "editor": "textfield"
+        },
+        "shouldDisplayHiring": {
+            "title": "Should Display Hiring Information",
+            "type": "boolean",
+            "description": "Determines whether the hiring link gets displayed.",
+            "editor": "checkbox"
+        },
+        "shouldDisplayG2": {
+            "title": "Should Display G2 banner",
+            "type": "boolean",
+            "description": "Determines whether the G2 banner gets displayed.",
+            "editor": "checkbox"
+        },
+        "type": {
+            "title": "Signature type",
+            "type": "string",
+            "description": "The signature type.",
+            "default": "Gmail",
+            "editor": "select",
+            "enum": ["Gmail", "Outlook"]
+        }
+    },
+    "required": ["fullName", "position", "shouldDisplayHiring", "type"]
+}
