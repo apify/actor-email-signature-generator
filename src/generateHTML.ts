@@ -46,8 +46,8 @@ const generateG2Badge = () => {
 const generateGDPRSoc2Badge = () => {
     return `
         <div style="margin-top: 12px;">
-            <img style="width: 42px;" alt="AICPA SOC2" src="http://localhost:8000/soc2.png" />
-            <img style="width: 42px;" alt="GDPR" src="http://localhost:8000/gdpr.png" />
+            <img style="width: 42px;" alt="AICPA SOC2" src="https://apify.com/ext/soc2.png" />
+            <img style="width: 42px;" alt="GDPR" src="https://apify.com/ext/gdpr.png" />
         </div>
     `
 };
