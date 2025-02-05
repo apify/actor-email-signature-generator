@@ -31,8 +31,8 @@ const typeToHtml = (input: EmailSignatureInput) => ({
         }</div>
         <div style="line-height: 18px;">${input.position}</div>
         <div style="display: flex; align-items: center;">
-            <a href="https://apify.com/">
-                <img src="https://apify.com/ext/logo-for-signatures.png" 
+            <a href="https://apify.com/" style="text-decoration: none;">
+                <img src="https://apify.com/ext/logo-for-signatures-2025.png"
                 alt="Apify" style="margin-top: 12px; width:115px; margin-bottom: 12px;">
             </a>
         </div>
@@ -65,7 +65,7 @@ const typeToHtml = (input: EmailSignatureInput) => ({
         }</div>
     <div style="line-height: 18px;">${input.position}</div>
     <br style="line-height: 12px;"> 
-    <a href="https://apify.com/"><img src="https://apify.com/ext/logo-for-signatures.png" 
+    <a href="https://apify.com/" style="text-decoration: none;"><img src="https://apify.com/ext/logo-for-signatures-2025.png"
         alt="Apify" style="width: 115px;"></a>
     <br style="line-height: 12px;"> 
     ${input.phoneNumber
