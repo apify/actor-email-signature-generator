@@ -50,15 +50,8 @@ const typeToHtml = (input: EmailSignatureInput) => ({
             : ""
         }
         </div>
-        
-        ${input.shouldDisplayG2
-            ? `<div style="display: flex; align-items: center;">
-            <a href="https://www.g2.com/products/apify/reviews">
-                <img src="https://apify.com/ext/g2badge.svg" 
-                alt="G2 badge" style="margin-top: 12px; width:90px; margin-bottom: 12px;">
-            </a>
-        </div>`
-            : ""
+
+        ${input.shouldDisplayG2 ? `<div style="display: flex; align-items: center;"><a title="Apify is a leader in Small-Business Data Extraction on G2" href="https://www.g2.com/products/apify/reviews?utm_source=rewards-badge"><img style="width: 125px;" alt="Apify is a leader in Small-Business Data Extraction on G2" src="https://images.g2crowd.com/uploads/report_medal_translation/image/22071/medal.svg" /></a></div>` : ""
         }</div>`,
     [EmailSignatureType.Outlook]: `<div style="font-family: Inter, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Ubuntu, 'Liberation Sans', Cantarell, 'DejaVu Sans', Oxygen-Sans, 'Noto Sans', 'Open Sans', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Verdana, Arial, sans-serif; font-size: 12px; font-weight: 400;">
     <div style="font-weight: 600; line-height: 18px;">${input.fullName
@@ -85,12 +78,7 @@ const typeToHtml = (input: EmailSignatureInput) => ({
     </div>
     <br style="line-height: 12px;">
     ${input.shouldDisplayG2
-            ? `
-        <a href="https://www.g2.com/products/apify/reviews">
-            <img src="https://apify.com/ext/g2badge.svg" 
-            alt="G2 badge" style="width:90px;">
-        </a>`
-            : ""
+            ? `<a title="Apify is a leader in Small-Business Data Extraction on G2" href="https://www.g2.com/products/apify/reviews?utm_source=rewards-badge"><img style="width: 125px;" alt="Apify is a leader in Small-Business Data Extraction on G2" src="https://images.g2crowd.com/uploads/report_medal_translation/image/22071/medal.svg" /></a>` : ""
         }
 </div>`,
 });
