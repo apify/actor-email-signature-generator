@@ -43,6 +43,15 @@ const generateG2Badge = () => {
         </a>`;
 };
 
+const generateGDPRSoc2Badge = () => {
+    return `
+        <div style="margin-top: 12px;">
+            <img style="width: 42px;" alt="AICPA SOC2" src="http://localhost:8000/soc2.png" />
+            <img style="width: 42px;" alt="GDPR" src="http://localhost:8000/gdpr.png" />
+        </div>
+    `
+};
+
 const typeToHtml = (input: EmailSignatureInput) => ({
     [EmailSignatureType.Gmail]: `
         ${generateHeader()}
@@ -65,6 +74,8 @@ const typeToHtml = (input: EmailSignatureInput) => ({
 
                 ${input.shouldDisplayHiring ? ` | <a href="https://apify.com/jobs" style="text-decoration: none;">We're hiring</a>` : ""}
             </div>
+
+            ${generateGDPRSoc2Badge()}
 
             ${input.shouldDisplayG2 ? `<div style="display: flex; align-items: center;">${generateG2Badge()}</div>` : ""}
         </div>`,
@@ -94,6 +105,10 @@ const typeToHtml = (input: EmailSignatureInput) => ({
 
                 ${input.shouldDisplayHiring ? ` | <a href="https://apify.com/jobs" style="text-decoration: none;">We're hiring</a>` : ""}
             </div>
+
+            <br style="line-height: 12px;">
+
+            ${generateGDPRSoc2Badge()}
 
             <br style="line-height: 12px;">
 
