@@ -1,0 +1,24 @@
+{
+    "fullName": "John Doe",
+    "position": "Software Engineer",
+    "phoneNumber": "+1 (123) 456-7890",
+    "twitterUrl": "twitter.com/johndoe",
+    "linkedInUrl": "linkedin.com/in/johndoe",
+    "githubUrl": "github.com/johndoe",
+    "hubspotUrl": "meetings.hubspot.com/johndoe",
+    "otherUrls": [
+        {
+            "key": "Facebook",
+            "value": "facebook.com/johndoe"
+        },
+        {
+            "key": "Personal Website",
+            "value": "johndoe.com"
+        }
+    ],
+    "apifyUrl": "apify.com/johndoe",
+    "apifyUrlLabel": "My Apify Profile",
+    "shouldDisplayHiring": true,
+    "shouldDisplayG2": true,
+    "type": "Gmail"
+}
