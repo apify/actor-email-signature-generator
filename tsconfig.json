@@ -1,26 +1,28 @@
 {
     "compilerOptions": {
-        "target": "es2019",
-        "module": "commonjs",
-        "moduleResolution": "node",
-        "strict": true,
-        "noImplicitAny": false,
-        "strictNullChecks": false,
+        "target": "ES2022",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "esModuleInterop": true,
         "lib": [
-             "DOM",
-             "DOM.Iterable",
-             "ES2015",
-             "ES2016",
-             "ES2018",
-             "ES2019.Object",
-             "ES2018.AsyncIterable",
-             "ES2020.String",
-             "ES2019.Array"
+            "DOM",
+            "DOM.Iterable",
+            "ES2015",
+            "ES2016",
+            "ES2018",
+            "ES2019.Object",
+            "ES2018.AsyncIterable",
+            "ES2020.String",
+            "ES2019.Array",
+            "ES2022"
         ],
         "rootDir": "src/",
-        "outDir": "build/"
+        "outDir": "build/",
+        "strict": true,
+        "skipLibCheck": true,
+        "forceConsistentCasingInFileNames": true
     },
     "include": [
-        "src/"
+        "src/**/*"
     ]
 }

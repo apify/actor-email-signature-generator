@@ -1,6 +1,13 @@
-import {EmailSignatureInput, EmailSignatureType} from "./types";
+import { EmailSignatureInput, EmailSignatureType } from "./types";
 
-const sanitizeUrl = (url: string) => {
+interface UrlObject {
+    key: string;
+    value: string | undefined;
+}
+
+const sanitizeUrl = (url: string | undefined): string => {
+    if (!url) return '#';
+
     let o: string;
 
     if (/^https?:\/\//i.test(url)) {
@@ -12,12 +19,12 @@ const sanitizeUrl = (url: string) => {
     return o;
 };
 
-const generateLinksSection = (input: EmailSignatureInput) => {
-    const urls = [
-        {key: "Twitter", value: input.twitterUrl},
-        {key: "LinkedIn", value: input.linkedInUrl},
-        {key: "GitHub", value: input.githubUrl},
-        {key: "Book a meeting", value: input.hubspotUrl},
+const generateLinksSection = (input: EmailSignatureInput): string => {
+    const urls: UrlObject[] = [
+        { key: "Twitter", value: input.twitterUrl },
+        { key: "LinkedIn", value: input.linkedInUrl },
+        { key: "GitHub", value: input.githubUrl },
+        { key: "Book a meeting", value: input.hubspotUrl },
         ...(input.otherUrls ?? []),
     ];
 
@@ -32,24 +39,24 @@ const generateLinksSection = (input: EmailSignatureInput) => {
     return `<div style="line-height: 18px;">${urlsHtml}</div>`;
 };
 
-const generateHeader = () => {
+const generateHeader = (): string => {
     return `<div style="font-family: Inter, -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Ubuntu, 'Liberation Sans', Cantarell, 'DejaVu Sans', Oxygen-Sans, 'Noto Sans', 'Open Sans', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Verdana, Arial, sans-serif; font-size: 12px; font-weight: 400;">`;
 };
 
-const generateG2Badge = () => {
+const generateG2Badge = (): string => {
     return `
         <a title="Apify is a leader in Small-Business Data Extraction on G2" href="https://www.g2.com/products/apify/reviews?utm_source=rewards-badge">
             <img style="width: 125px;" alt="Apify is a leader in Small-Business Data Extraction on G2" src="https://images.g2crowd.com/uploads/report_medal_translation/image/22071/medal.svg" />
         </a>`;
 };
 
-const generateGDPRSoc2Badge = () => {
+const generateGDPRSoc2Badge = (): string => {
     return `
         <div style="margin-top: 12px;">
             <img style="width: 42px;" alt="AICPA SOC2" src="https://apify.com/ext/soc2.png" />
             <img style="width: 42px;" alt="GDPR" src="https://apify.com/ext/gdpr.png" />
         </div>
-    `
+    `;
 };
 
 const typeToHtml = (input: EmailSignatureInput) => ({
