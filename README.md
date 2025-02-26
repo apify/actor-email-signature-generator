@@ -15,6 +15,7 @@ The format is HTML.
 - Optional G2 badge
 - Optional compliance badges (GDPR and SOC2) with links to documentation
 - Color scheme that adapts to both light and dark modes in email clients
+- Automatic URL sanitization (adds "https://" prefix if missing)
 
 ## Input Parameters
 
@@ -42,6 +43,12 @@ The format is HTML.
 2. Run the actor
 3. Retrieve the HTML signature from the key-value store under the key "OUTPUT"
 4. Copy and paste the HTML into your email client's signature settings
+
+## URL Formatting
+
+All URLs in the signature are automatically processed:
+- If a URL doesn't start with "http://" or "https://", the "https://" prefix is automatically added
+- This means you can input URLs like "twitter.com/username" without needing to add the protocol
 
 ## Testing Dark Mode
 
