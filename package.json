@@ -1,15 +1,11 @@
 {
     "name": "email-signature-generator",
-    "version": "2.0.0",
+    "version": "0.1.0",
     "description": "This actor generates email signatures for Apify.",
     "dependencies": {
         "@types/node": "^22.13.5",
         "apify": "^3.3.2",
         "typescript": "^5.8.1-rc"
-    },
-    "devDependencies": {
-        "@apify/eslint-config": "^0.4.0",
-        "eslint": "^9.21.0"
     },
     "scripts": {
         "start": "npm run build && node build/main.js",

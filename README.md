@@ -1,4 +1,4 @@
-# Apify Email Signature Generator
+# Apify email signature generator
 
 This actor generates an email signature for Apify team members based on the provided details.
 The generated signature is available in the key-value store, with the key being "OUTPUT".
@@ -17,7 +17,12 @@ The format is HTML.
 - Color scheme that adapts to both light and dark modes in email clients
 - Automatic URL sanitization (adds "https://" prefix if missing)
 
-## Input Parameters
+## Build requirements
+
+- Node.js 20 (specified in the Dockerfile)
+- Uses the `--legacy-peer-deps` flag for npm install to handle dependency conflicts
+
+## Input parameters
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
@@ -44,13 +49,13 @@ The format is HTML.
 3. Retrieve the HTML signature from the key-value store under the key "OUTPUT"
 4. Copy and paste the HTML into your email client's signature settings
 
-## URL Formatting
+## URL formatting
 
 All URLs in the signature are automatically processed:
 - If a URL doesn't start with "http://" or "https://", the "https://" prefix is automatically added
 - This means you can input URLs like "twitter.com/username" without needing to add the protocol
 
-## Testing Dark Mode
+## Testing dark mode
 
 The actor includes a testing tool to preview how the signature will look in both light and dark modes:
 
@@ -65,7 +70,7 @@ The actor includes a testing tool to preview how the signature will look in both
 
 For thorough testing, it's recommended to also test in actual email clients with dark mode enabled (Gmail, Apple Mail, Outlook).
 
-## Compliance Badges
+## Compliance badges
 
 The signature can include compliance badges for:
 
@@ -74,7 +79,7 @@ The signature can include compliance badges for:
 
 These can be toggled individually using the `shouldDisplayGDPR` and `shouldDisplaySOC2` input parameters.
 
-## Color Scheme
+## Color scheme
 
 The signature uses:
 
