@@ -20,5 +20,7 @@
     "apifyUrlLabel": "My Apify Profile",
     "shouldDisplayHiring": true,
     "shouldDisplayG2": true,
+    "shouldDisplayGDPR": true,
+    "shouldDisplaySOC2": true,
     "type": "Gmail"
 }

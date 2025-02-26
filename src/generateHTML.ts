@@ -50,11 +50,24 @@ const generateG2Badge = (): string => {
         </a>`;
 };
 
-const generateGDPRSoc2Badge = (): string => {
+const generateComplianceBadges = (input: EmailSignatureInput): string => {
+    const badges = [];
+
+    if (input.shouldDisplaySOC2 !== false) {
+        badges.push(`<a href="https://trust.apify.com/" style="text-decoration: none;"><img style="width: 42px;" alt="AICPA SOC2" src="https://apify.com/ext/soc2.png" /></a>`);
+    }
+
+    if (input.shouldDisplayGDPR !== false) {
+        badges.push(`<a href="https://docs.apify.com/legal/gdpr-information" style="text-decoration: none;"><img style="width: 42px;" alt="GDPR" src="https://apify.com/ext/gdpr.png" /></a>`);
+    }
+
+    if (badges.length === 0) {
+        return '';
+    }
+
     return `
         <div style="margin-top: 12px;">
-            <img style="width: 42px;" alt="AICPA SOC2" src="https://apify.com/ext/soc2.png" />
-            <img style="width: 42px;" alt="GDPR" src="https://apify.com/ext/gdpr.png" />
+            ${badges.join('\n            ')}
         </div>
     `;
 };
@@ -82,7 +95,7 @@ const typeToHtml = (input: EmailSignatureInput) => ({
                 ${input.shouldDisplayHiring ? ` | <a href="https://apify.com/jobs" style="text-decoration: none;">We're hiring</a>` : ""}
             </div>
 
-            ${generateGDPRSoc2Badge()}
+            ${generateComplianceBadges(input)}
 
             ${input.shouldDisplayG2 ? `<div style="display: flex; align-items: center;">${generateG2Badge()}</div>` : ""}
         </div>`,
@@ -115,7 +128,7 @@ const typeToHtml = (input: EmailSignatureInput) => ({
 
             <br style="line-height: 12px;">
 
-            ${generateGDPRSoc2Badge()}
+            ${generateComplianceBadges(input)}
 
             <br style="line-height: 12px;">
 

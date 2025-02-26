@@ -16,6 +16,8 @@ export interface EmailSignatureInput {
     apifyUrl?: string;
     shouldDisplayHiring?: boolean;
     shouldDisplayG2?: boolean;
+    shouldDisplayGDPR?: boolean;
+    shouldDisplaySOC2?: boolean;
     type: EmailSignatureType;
 }
 

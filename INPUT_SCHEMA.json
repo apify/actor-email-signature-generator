@@ -79,6 +79,20 @@
             "description": "Determines whether the G2 banner gets displayed.",
             "editor": "checkbox"
         },
+        "shouldDisplayGDPR": {
+            "title": "Should Display GDPR Compliance",
+            "type": "boolean",
+            "description": "Determines whether the GDPR compliance badge gets displayed.",
+            "editor": "checkbox",
+            "default": true
+        },
+        "shouldDisplaySOC2": {
+            "title": "Should Display SOC2 Compliance",
+            "type": "boolean",
+            "description": "Determines whether the SOC2 compliance badge gets displayed.",
+            "editor": "checkbox",
+            "default": true
+        },
         "type": {
             "title": "Signature type",
             "type": "string",
