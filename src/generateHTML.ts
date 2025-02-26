@@ -19,6 +19,8 @@ const sanitizeUrl = (url: string | undefined): string => {
     return o;
 };
 
+const linkColor = "#6b89c9";
+
 const generateLinksSection = (input: EmailSignatureInput): string => {
     const urls: UrlObject[] = [
         { key: "Twitter", value: input.twitterUrl },
@@ -32,7 +34,7 @@ const generateLinksSection = (input: EmailSignatureInput): string => {
         .filter((u) => u.value)
         .map(
             (u) =>
-                `<a href="${sanitizeUrl(u.value)}" style="text-decoration: none;">${u.key}</a>`
+                `<a href="${sanitizeUrl(u.value)}" style="text-decoration: none; color: ${linkColor};">${u.key}</a>`
         )
         .join(" | ");
 
@@ -75,24 +77,24 @@ const generateComplianceBadges = (input: EmailSignatureInput): string => {
 const typeToHtml = (input: EmailSignatureInput) => ({
     [EmailSignatureType.Gmail]: `
         ${generateHeader()}
-            <div style="font-weight: 600; line-height: 18px;">${input.fullName}</div>
+            <div style="font-weight: 600; line-height: 18px; color: inherit;">${input.fullName}</div>
 
-            <div style="line-height: 18px;">${input.position}</div>
+            <div style="line-height: 18px; color: inherit;">${input.position}</div>
 
             <div style="display: flex; align-items: center;">
                 <a href="https://apify.com/" style="text-decoration: none;"><img src="https://apify.com/ext/logo-for-signatures-2025.png" alt="Apify" style="margin-top: 12px; width:115px; margin-bottom: 12px;"></a>
             </div>
 
-            ${input.phoneNumber ? `<div style="line-height: 18px;">${input.phoneNumber}</div>` : ""}
+            ${input.phoneNumber ? `<div style="line-height: 18px; color: inherit;">${input.phoneNumber}</div>` : ""}
 
             ${generateLinksSection(input)}
 
-            ${input.apifyUrl ? `<a href="${sanitizeUrl(input.apifyUrl)}" style="text-decoration: none;"><div style="line-height: 18px;">${input.apifyUrlLabel || 'Apify Profile'}</div></a>` : ""}
+            ${input.apifyUrl ? `<a href="${sanitizeUrl(input.apifyUrl)}" style="text-decoration: none; color: ${linkColor};"><div style="line-height: 18px;">${input.apifyUrlLabel || 'Apify Profile'}</div></a>` : ""}
 
             <div style="line-height: 18px; margin-top: 12px;">
-                <a href="https://apify.com" style="text-decoration: none; font-weight: 600;">Apify.com</a>
+                <a href="https://apify.com" style="text-decoration: none; font-weight: 600; color: ${linkColor};">Apify.com</a>
 
-                ${input.shouldDisplayHiring ? ` | <a href="https://apify.com/jobs" style="text-decoration: none;">We're hiring</a>` : ""}
+                ${input.shouldDisplayHiring ? ` | <a href="https://apify.com/jobs" style="text-decoration: none; color: ${linkColor};">We're hiring</a>` : ""}
             </div>
 
             ${generateComplianceBadges(input)}
@@ -102,9 +104,9 @@ const typeToHtml = (input: EmailSignatureInput) => ({
 
     [EmailSignatureType.Outlook]: `
         ${generateHeader()}
-            <div style="font-weight: 600; line-height: 18px;">${input.fullName}</div>
+            <div style="font-weight: 600; line-height: 18px; color: inherit;">${input.fullName}</div>
 
-            <div style="line-height: 18px;">${input.position}</div>
+            <div style="line-height: 18px; color: inherit;">${input.position}</div>
 
             <br style="line-height: 12px;">
 
@@ -112,18 +114,18 @@ const typeToHtml = (input: EmailSignatureInput) => ({
 
             <br style="line-height: 12px;">
 
-            ${input.phoneNumber ? `<div style="line-height: 18px;">${input.phoneNumber}</div>` : ""}
+            ${input.phoneNumber ? `<div style="line-height: 18px; color: inherit;">${input.phoneNumber}</div>` : ""}
 
             ${generateLinksSection(input)}
 
-            ${input.apifyUrl ? `<a href="${sanitizeUrl(input.apifyUrl)}" style="text-decoration: none;"><div style="line-height: 18px;">${input.apifyUrlLabel || 'Apify Profile'}</div></a>` : ""}
+            ${input.apifyUrl ? `<a href="${sanitizeUrl(input.apifyUrl)}" style="text-decoration: none; color: ${linkColor};"><div style="line-height: 18px;">${input.apifyUrlLabel || 'Apify Profile'}</div></a>` : ""}
 
             <br style="line-height: 12px;">
 
             <div style="line-height: 18px;">
-                <a href="https://apify.com" style="text-decoration: none; font-weight: 600;">Apify.com</a>
+                <a href="https://apify.com" style="text-decoration: none; font-weight: 600; color: ${linkColor};">Apify.com</a>
 
-                ${input.shouldDisplayHiring ? ` | <a href="https://apify.com/jobs" style="text-decoration: none;">We're hiring</a>` : ""}
+                ${input.shouldDisplayHiring ? ` | <a href="https://apify.com/jobs" style="text-decoration: none; color: ${linkColor};">We're hiring</a>` : ""}
             </div>
 
             <br style="line-height: 12px;">
