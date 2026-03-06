@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "description": "This actor generates email signatures for Apify.",
     "dependencies": {
-        "@types/node": "^22.13.5",
+        "@types/node": "^24.0.0",
         "apify": "^3.3.2",
         "typescript": "^5.8.1-rc"
     },
